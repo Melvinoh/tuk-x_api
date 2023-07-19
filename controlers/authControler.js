@@ -30,20 +30,25 @@ export const signUp = (req , res) =>{
     })
 }
 export const login  = (req, res) =>{
+    const {username, password} = req.body
+    if(!username || !password){
+        return res.status(400).json('all field are required')
+    }
     const q = "SELECT * FROM `students_tb` WHERE `username` = ?"
-    const {username, regno} = req.body
-    db.query(q , [username], (err, data) =>{
+   
+    db.query(q ,[username], (err, data) =>{
         if (err) return res.status(500).json(err);
-        console.log(err)
-        if (data.length === 0) return res.status(404).json("username not found")
+        console.log(err);
+        console.log(data);
+        if (data.length === 0) return res.status(404).json("username not found");
 
         const checkPassword = bcrypt.compareSync(req.body.password , data[0].password);
 
         if (!checkPassword) return res.status(400).json("invalid username or password");
         
-        const token = jwt.sign({id:data[0].regno}, "secretKey")
+        const token = jwt.sign({id:data[0].regno}, "secretKey");
         
-        const{password, ...others} = data[0]
+        const{password, ...others} = data[0];
 
         return res.cookie("accessToken", token, {
             httpOnly:true
