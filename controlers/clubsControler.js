@@ -3,7 +3,7 @@ import { db } from "../dbConnect.js";
 
 export const getClubs = (req, res) =>{
 
-    const q = "SELECT * FROM clubs_tb";
+    const q = "SELECT * FROM clubs_tb LIMIT 10";
 
     db.query(q , (err,data) =>{
         if(err) return res.status(500).json(err);
@@ -19,8 +19,8 @@ export const getClubsID = (req, res) =>{
 
     db.query(q ,[id], (err,data) =>{
         if(err) return res.status(500).json(err);
-        if(data.length === 0 ) return res.status(500).json(err)
-        return res.status(200).json(data)
+        if(data[0].length === 0 ) return res.status(500).json(err)
+        return res.status(200).json(data[0])
     })
 
 }
