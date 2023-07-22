@@ -56,9 +56,8 @@ export const myClubs = (req, res) =>{
     const q = "SELECT * FROM clubs_tb JOIN `studentclubs` ON clubs_tb.ClubsID = studentclubs.ClubID WHERE studentclubs.StudentID = ?";
 
      db.query(q , [regno], (err,data) =>{
-
         if(err) return res.status(500).json(err);
-        if(data.length === 0) return res.status(500).json(err)
+        if(data.length === 0) return res.status(200).json("you are not a member of any clubs yet kindly checkout the various options below")
         return res.status(200).json(data);
 
      })
