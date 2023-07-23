@@ -1,6 +1,8 @@
 import express from "express";
 import userRoutes from "./routers/auth.js"
 import clubRoutes from "./routers/clubs.js"
+import postsRoutes from "./routers/post.js"
+
 import cors from "cors"
 import cookieParser from "cookie-parser";
 
@@ -21,6 +23,7 @@ app.use(cookieParser());
 //routers
 app.use("/api/auth", userRoutes);
 app.use("/api/clubs", clubRoutes);
+app.use("/api/posts",postsRoutes );
 
 
 app.listen("8800", ()=>{
