@@ -10,17 +10,18 @@ export const addPost = (req, res) =>{
     jwt.verify(token, "secretKey", (err,student) =>{
         if (err) return res.status(403).json("token not vallied");
 
-        const {desc, clubid } = req.body
+        const {desc, clubid, img } = req.body
+        console.log(img)
         if(!clubid) return res.status(409).json("posting failed please try again");
         const StudentID = student.id;
         const PostID = uuidv4();
         const createdAt =  moment(Date.now()).format("YYYY-MM-DD HH:mm:ss");
         
-        const values = [PostID, clubid, StudentID, desc, createdAt];
+        const values = [PostID, clubid, StudentID, desc, createdAt,img];
         console.log(PostID);
         console.log(StudentID);
        
-        const q = "INSERT INTO `posts_tb` (`PostID`,`postCatID`,`StudentID`,`desc`,`createdAt`) VALUES(?)";
+        const q = "INSERT INTO `posts_tb` (`PostID`,`postCatID`,`StudentID`,`desc`,`createdAt`,`post_img`) VALUES(?)";
 
         db.query(q , [values], (err,data) =>{
             if (err) return res.status(500).json(err);
