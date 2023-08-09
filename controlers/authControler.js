@@ -1,6 +1,7 @@
 import { db } from "../dbConnect.js";
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
+import { v4 as uuidv4 } from 'uuid';
 
 
 export const signUp = (req , res) =>{
@@ -9,25 +10,57 @@ export const signUp = (req , res) =>{
     if(!regno || !fname || !sname || !email || !password ||!username){
         return res.status(400).json('all field are required')
     }
-
     const q = "SELECT * FROM `students_tb` WHERE `regno` = ? ";
-    db.query(q, [regno], (err, data) => {
-        if (err) return res.status(500).json(err);
-        if (data.length) return res.status(409).json("user already exist");
+    const q1 = "INSERT INTO `studentsDetails_tb` (`studentsDetID` , `studentsRegno`) VALUES(?)";
 
-        //hash password 
-        const salt = bcrypt.genSaltSync(10);
-        const hashedPassword = bcrypt.hashSync(password, salt);
+    const studentsDetID = uuidv4()
 
-        //creating user
-        const q = "INSERT INTO `students_tb` (`regno`,`fname`, `sname`,`email`,`password`,`username`) VALUES (?)"
+    db.beginTransaction( (err) =>{
+        if(err) return res.status(500).json(err)
 
-        const values = [regno, fname, sname, email, hashedPassword, username];
-        db.query(q, [values], (err,data) =>{
-            if (err) return res.status(500).json(err)
-            return res.status(200).json("user created succefully")
+        db.query(q1, [studentsDetID,regno] , (err,data)=>{
+           if(err){
+            db.rollback(()=>{
+                return res.status(500).json(err)
+            })
+           }
+     
         })
+
+        db.query(q, [regno], (err, data) => {
+            if (err) return res.status(500).json(err);
+            if (data.length) return res.status(409).json("user already exist");
+    
+            //hash password 
+            const salt = bcrypt.genSaltSync(10);
+            const hashedPassword = bcrypt.hashSync(password, salt);
+    
+            //creating user
+            const q = "INSERT INTO `students_tb` (`regno`,`fname`, `sname`,`email`,`password`,`username`) VALUES (?)"
+    
+            const values = [regno, fname, sname, email, hashedPassword, username];
+    
+            db.query(q, [values], (err,data) =>{
+                if (err) {
+                    db.rollback(()=>{
+                        return res.status(500).json(err)
+                    })  
+                }
+            })
+        })
+
+        db.commit((err)=>{
+            if(err){
+                db.rollback(()=>{
+                    return res.status(500).json("could not commit transactions", err)
+                })
+            }
+            return res.status(200).json("account creation successful")
+        })
+
     })
+
+   
 }
 export const login  = (req, res) =>{
     const {username, password} = req.body
@@ -55,9 +88,12 @@ export const login  = (req, res) =>{
     })
 
 }
+
 export const logout = (req, res) =>{
     res.clearCookie("accessToken",{
         secure:true,
         sameSite:"none"
     }).status(200).json("user has been logged out!")
 }
+
+
