@@ -60,6 +60,7 @@ export const myClubs = (req, res) =>{
         if(data.length === 0) return res.status(200).json("you are not a member of any clubs yet kindly checkout the various options below")
         return res.status(200).json(data);
 
+        
      })
 
 

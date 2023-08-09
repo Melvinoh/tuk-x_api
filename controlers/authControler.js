@@ -5,63 +5,45 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 export const signUp = (req , res) =>{
-   // checkuser if exist 
-    const {regno, fname, sname, email, password, username} = req.body
-    if(!regno || !fname || !sname || !email || !password ||!username){
-        return res.status(400).json('all field are required')
-    }
-    const q = "SELECT * FROM `students_tb` WHERE `regno` = ? ";
-    const q1 = "INSERT INTO `studentsDetails_tb` (`studentsDetID` , `studentsRegno`) VALUES(?)";
+    try {
 
-    const studentsDetID = uuidv4()
+         // checkuser if exist 
+        const {regno, fname, sname, email, password, username} = req.body
+        if(!regno || !fname || !sname || !email || !password ||!username){
+            return res.status(400).json('all field are required')
+        }
+        const q = "SELECT * FROM `students_tb` WHERE `regno` = ? ";
+        const q1 = "INSERT INTO `studentsDetails_tb` (`studentsDetID` , `studentsRegno`) VALUES(?,?)";
 
-    db.beginTransaction( (err) =>{
-        if(err) return res.status(500).json(err)
-
-        db.query(q1, [studentsDetID,regno] , (err,data)=>{
-           if(err){
-            db.rollback(()=>{
-                return res.status(500).json(err)
-            })
-           }
-     
-        })
-
+        const studentsDetID = uuidv4()
         db.query(q, [regno], (err, data) => {
             if (err) return res.status(500).json(err);
             if (data.length) return res.status(409).json("user already exist");
-    
+
             //hash password 
             const salt = bcrypt.genSaltSync(10);
             const hashedPassword = bcrypt.hashSync(password, salt);
-    
+
             //creating user
             const q = "INSERT INTO `students_tb` (`regno`,`fname`, `sname`,`email`,`password`,`username`) VALUES (?)"
-    
+
             const values = [regno, fname, sname, email, hashedPassword, username];
-    
-            db.query(q, [values], (err,data) =>{
-                if (err) {
-                    db.rollback(()=>{
-                        return res.status(500).json(err)
-                    })  
-                }
-            })
+
+            db.query(q, [values])
+            db.query(q1, [studentsDetID,regno])
+            return res.status(200).json("account creation succefull")
         })
+       
+    } catch (error) {
+        if (error) return res.status(500).json(error)
+        db.rollback()
+    }
+  
 
-        db.commit((err)=>{
-            if(err){
-                db.rollback(()=>{
-                    return res.status(500).json("could not commit transactions", err)
-                })
-            }
-            return res.status(200).json("account creation successful")
-        })
-
-    })
-
-   
+       
 }
+
+
 export const login  = (req, res) =>{
     const {username, password} = req.body
     if(!username || !password){

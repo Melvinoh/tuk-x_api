@@ -1,0 +1,1678 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nselect * from students_tb\nselect * from studentsDetails_tb;\nALTER table studentsDetails_tb MODIFY COLUMN studentsDetID VARCHAR(40);\ndesc studentsDetails_tb;\nselect * from studentsDetails_tb;\nselect * from students_tb;\nselect * from studentsDetails_tb;\ntruncate students_tb;\ndesc students_tb;\nalter table studentsDetails_tb drop FOREIGN KEY fk_studentRegno;\nSELECT\n    TABLE_NAME,\n    COLUMN_NAME,\n    CONSTRAINT_NAME,\n    REFERENCED_TABLE_NAME,\n    REFERENCED_COLUMN_NAME\nFROM\n    INFORMATION_SCHEMA.KEY_COLUMN_USAGE\nWHERE\n    TABLE_SCHEMA = 'satukdb'\n    AND REFERENCED_TABLE_NAME IS NOT NULL;\n\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 24,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 24,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 23,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -6
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the current statement.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "6ddbe217-e7f5-4793-b15b-c18946c9278e"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 25
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0468fd2d-95b5-4f80-c1d8-4f88bf3debf3",
+                    "resultId": "6ddbe217-e7f5-4793-b15b-c18946c9278e",
+                    "rows": [
+                        {
+                            "0": "SCCI/00572/2020",
+                            "1": "muchoki",
+                            "2": "kirera",
+                            "3": "kireramuchoki@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$leYVz9wnBhvUJt.NkTrHBOtRS/Ywd3HENUsy4CjzY9wPjj19WV5.a",
+                            "8": null,
+                            "9": null,
+                            "10": "muchoki"
+                        },
+                        {
+                            "0": "SCCI/00573/2020",
+                            "1": "Muturi",
+                            "2": "Melvin",
+                            "3": "melvinmurichu@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$XWi/mOmlJG73OWcbG/PEj.GyOo7oM3Oo/klc/CAesmILUJBJrlYeC",
+                            "8": "mel2.jpg",
+                            "9": null,
+                            "10": "melvinoh"
+                        },
+                        {
+                            "0": "SCCI/00574/2020",
+                            "1": "kelvin",
+                            "2": "muturi",
+                            "3": "kelvinmuturii@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$.p/7FxpRgNzjUiOJJ/UoIu2CayewPYzDyArp69YCPg9aoBltYcnca",
+                            "8": null,
+                            "9": null,
+                            "10": "kelvin"
+                        },
+                        {
+                            "0": "SCCI/00576/2020",
+                            "1": "ashley",
+                            "2": "owaya",
+                            "3": "owayaashley@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$cPHwkjM7Tv1WxgWsxcDLNeoZTAsrKFbdR9WMhdTmkw//TJZNDwXWq",
+                            "8": null,
+                            "9": null,
+                            "10": "ash"
+                        },
+                        {
+                            "0": "SCCI/00577/2020",
+                            "1": "fredrick",
+                            "2": "kimathi",
+                            "3": "fred@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$HjhTP5SMbGR9X5Z7xjYXKOohhFKS7AfnuO/BFdLFmHX.TZ5/MMGwq",
+                            "8": null,
+                            "9": null,
+                            "10": "fredi"
+                        },
+                        {
+                            "0": "SCCI/00578/2020",
+                            "1": "Muturi",
+                            "2": "john kelvin",
+                            "3": "johnkelvin@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$xDwFhFVDysptu5EqSo/tr.X62/Kqiv/nmZqra7z0YonaECK.DAQZS",
+                            "8": "JK1.jpg",
+                            "9": null,
+                            "10": "jk"
+                        },
+                        {
+                            "0": "SCCI/00579/2020",
+                            "1": "Muturi",
+                            "2": "john kelvin",
+                            "3": "johnkelvin@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$TNSmL8uyWtvc2T0RKxECcuqzW3Ujo/OYRV2y6q2fNo4IqW8Ka5FxO",
+                            "8": null,
+                            "9": null,
+                            "10": "jk"
+                        },
+                        {
+                            "0": "SCCI/00580/2020",
+                            "1": "judy",
+                            "2": "gathoni",
+                            "3": "judygathoni@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$Ih2NMlD2aZcEGdP.Q5E6qOXnC4qF7SEpSgCOpp5iv4Bz1RQuuhV6e",
+                            "8": null,
+                            "9": null,
+                            "10": "judy"
+                        },
+                        {
+                            "0": "SCCI/00581/2020",
+                            "1": "rachael",
+                            "2": "Ngatha",
+                            "3": "Kivutingatha@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$VNLBYrDNJcsNid9VeReUM.bvlpsjOJgFMU7mFaze/DAnq4S3cDADG",
+                            "8": null,
+                            "9": null,
+                            "10": "Kivuti"
+                        },
+                        {
+                            "0": "SCCI/00588/2020",
+                            "1": "priscah",
+                            "2": "akinyi",
+                            "3": "priscahakinyi@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$.g/i9OeXmt5wzrJG5Fitk.mc2Y9sIOhJmZIjekmv97AjC4u0rhjL2",
+                            "8": null,
+                            "9": null,
+                            "10": "priscah"
+                        },
+                        {
+                            "0": "SCCI/00589/2020",
+                            "1": "shadrack",
+                            "2": "ngumbau",
+                            "3": "shadrackngumbau@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$xpLZzlx3IJX8eAwuQIWI.uXnXcMhpqkD3XOoaAVkiLFIN07H9G/tC",
+                            "8": null,
+                            "9": null,
+                            "10": "shadrack"
+                        },
+                        {
+                            "0": "SCCI/00622/2021",
+                            "1": "Milly",
+                            "2": "Kangweru",
+                            "3": "millykagweru@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$CUJd68TU1YWKLtpjypLxMeQTATux/UwAF4abaMU6A/1PvnERwvu5m",
+                            "8": null,
+                            "9": null,
+                            "10": "millyC"
+                        },
+                        {
+                            "0": "SCCI/0897/2021",
+                            "1": "Martin",
+                            "2": "Magoha",
+                            "3": "martinmagoha@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$BuKwbFNp5SegnFFDSZ5X9OyqhB0X8R8DV9d/i4xpg/kNvcO7ojqgK",
+                            "8": null,
+                            "9": null,
+                            "10": "marto"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "regno",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "fname",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "sname",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "email",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "facultyid",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "schoolid",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "CourseID",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "password",
+                            "field": "7",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "profile_pic",
+                            "field": "8",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "cover_photo",
+                            "field": "9",
+                            "dataType": {
+                                "type": 23
+                            }
+                        },
+                        {
+                            "title": "username",
+                            "field": "10",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 13 records retrieved in 2.281ms"
+                    },
+                    "totalRowCount": 13,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from students_tb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "15e83082-3ab8-4982-e0b0-00a963ff97a9",
+                            "content": "OK, 0 records retrieved in 2.524ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 33
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "0abe0c81-7a6e-4dce-b1c4-e6822691d737",
+                            "content": "OK, 0 records retrieved in 53.331ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 71
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "31771c1a-512b-4b2b-965a-e3c66a3e8e72"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 24
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0468fd2d-95b5-4f80-c1d8-4f88bf3debf3",
+                    "resultId": "31771c1a-512b-4b2b-965a-e3c66a3e8e72",
+                    "rows": [
+                        {
+                            "0": "studentsDetID",
+                            "1": "varchar(40)",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "zip_code",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "email",
+                            "1": "varchar(30)",
+                            "2": "YES",
+                            "3": "UNI",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "phone",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "id_no",
+                            "1": "varchar(15)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "city",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "county",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "next_of_king",
+                            "1": "varchar(30)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "paswword",
+                            "1": "varchar(100)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "studentsRegno",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "MUL",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "portfolio_url",
+                            "1": "varchar(50)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "bio",
+                            "1": "varchar(200)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "social_handles",
+                            "1": "json",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "skills",
+                            "1": "json",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 14 records retrieved in 17.759ms"
+                    },
+                    "totalRowCount": 14,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "desc studentsDetails_tb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "065b5a60-db4c-422a-cf3a-d55246979356",
+                            "content": "OK, 0 records retrieved in 1.595ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 33
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "56d085f4-acc1-4db5-de60-6e372ea75455"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 26
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0468fd2d-95b5-4f80-c1d8-4f88bf3debf3",
+                    "resultId": "56d085f4-acc1-4db5-de60-6e372ea75455",
+                    "rows": [
+                        {
+                            "0": "SCCI/00572/2020",
+                            "1": "muchoki",
+                            "2": "kirera",
+                            "3": "kireramuchoki@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$leYVz9wnBhvUJt.NkTrHBOtRS/Ywd3HENUsy4CjzY9wPjj19WV5.a",
+                            "8": null,
+                            "9": null,
+                            "10": "muchoki"
+                        },
+                        {
+                            "0": "SCCI/00573/2020",
+                            "1": "Muturi",
+                            "2": "Melvin",
+                            "3": "melvinmurichu@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$XWi/mOmlJG73OWcbG/PEj.GyOo7oM3Oo/klc/CAesmILUJBJrlYeC",
+                            "8": "mel2.jpg",
+                            "9": null,
+                            "10": "melvinoh"
+                        },
+                        {
+                            "0": "SCCI/00574/2020",
+                            "1": "kelvin",
+                            "2": "muturi",
+                            "3": "kelvinmuturii@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$.p/7FxpRgNzjUiOJJ/UoIu2CayewPYzDyArp69YCPg9aoBltYcnca",
+                            "8": null,
+                            "9": null,
+                            "10": "kelvin"
+                        },
+                        {
+                            "0": "SCCI/00576/2020",
+                            "1": "ashley",
+                            "2": "owaya",
+                            "3": "owayaashley@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$cPHwkjM7Tv1WxgWsxcDLNeoZTAsrKFbdR9WMhdTmkw//TJZNDwXWq",
+                            "8": null,
+                            "9": null,
+                            "10": "ash"
+                        },
+                        {
+                            "0": "SCCI/00577/2020",
+                            "1": "fredrick",
+                            "2": "kimathi",
+                            "3": "fred@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$HjhTP5SMbGR9X5Z7xjYXKOohhFKS7AfnuO/BFdLFmHX.TZ5/MMGwq",
+                            "8": null,
+                            "9": null,
+                            "10": "fredi"
+                        },
+                        {
+                            "0": "SCCI/00578/2020",
+                            "1": "Muturi",
+                            "2": "john kelvin",
+                            "3": "johnkelvin@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$xDwFhFVDysptu5EqSo/tr.X62/Kqiv/nmZqra7z0YonaECK.DAQZS",
+                            "8": "JK1.jpg",
+                            "9": null,
+                            "10": "jk"
+                        },
+                        {
+                            "0": "SCCI/00579/2020",
+                            "1": "Muturi",
+                            "2": "john kelvin",
+                            "3": "johnkelvin@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$TNSmL8uyWtvc2T0RKxECcuqzW3Ujo/OYRV2y6q2fNo4IqW8Ka5FxO",
+                            "8": null,
+                            "9": null,
+                            "10": "jk"
+                        },
+                        {
+                            "0": "SCCI/00580/2020",
+                            "1": "judy",
+                            "2": "gathoni",
+                            "3": "judygathoni@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$Ih2NMlD2aZcEGdP.Q5E6qOXnC4qF7SEpSgCOpp5iv4Bz1RQuuhV6e",
+                            "8": null,
+                            "9": null,
+                            "10": "judy"
+                        },
+                        {
+                            "0": "SCCI/00581/2020",
+                            "1": "rachael",
+                            "2": "Ngatha",
+                            "3": "Kivutingatha@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$VNLBYrDNJcsNid9VeReUM.bvlpsjOJgFMU7mFaze/DAnq4S3cDADG",
+                            "8": null,
+                            "9": null,
+                            "10": "Kivuti"
+                        },
+                        {
+                            "0": "SCCI/00588/2020",
+                            "1": "priscah",
+                            "2": "akinyi",
+                            "3": "priscahakinyi@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$.g/i9OeXmt5wzrJG5Fitk.mc2Y9sIOhJmZIjekmv97AjC4u0rhjL2",
+                            "8": null,
+                            "9": null,
+                            "10": "priscah"
+                        },
+                        {
+                            "0": "SCCI/00589/2020",
+                            "1": "shadrack",
+                            "2": "ngumbau",
+                            "3": "shadrackngumbau@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$xpLZzlx3IJX8eAwuQIWI.uXnXcMhpqkD3XOoaAVkiLFIN07H9G/tC",
+                            "8": null,
+                            "9": null,
+                            "10": "shadrack"
+                        },
+                        {
+                            "0": "SCCI/00590/2020",
+                            "1": "alex",
+                            "2": "kamau",
+                            "3": "kamaualex@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$q8U3zDOhbXG.FgTf08rpQOLUTlLcI3TH1MX7PZOyo13iJZOldW9ku",
+                            "8": null,
+                            "9": null,
+                            "10": "kama"
+                        },
+                        {
+                            "0": "SCCI/00622/2021",
+                            "1": "Milly",
+                            "2": "Kangweru",
+                            "3": "millykagweru@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$CUJd68TU1YWKLtpjypLxMeQTATux/UwAF4abaMU6A/1PvnERwvu5m",
+                            "8": null,
+                            "9": null,
+                            "10": "millyC"
+                        },
+                        {
+                            "0": "SCCI/00673/2020",
+                            "1": "simon",
+                            "2": "wairimu",
+                            "3": "simonwairimu@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$Z8MYxrwOmW5hcNDf2EjWSeSeKlagDxQWv9HpSb049EyjQUGQUFYFi",
+                            "8": null,
+                            "9": null,
+                            "10": "simo"
+                        },
+                        {
+                            "0": "SCCI/00674/2020",
+                            "1": "mourine",
+                            "2": "wairimu",
+                            "3": "paulmoh@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$XzjK0bK0Ln5OaV343C4zNORacv3C3CPiXFkwix8j5ygW7AoTDolm6",
+                            "8": null,
+                            "9": null,
+                            "10": "paulmoh"
+                        },
+                        {
+                            "0": "SCCI/0897/2021",
+                            "1": "Martin",
+                            "2": "Magoha",
+                            "3": "martinmagoha@gmail.com",
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": "$2b$10$BuKwbFNp5SegnFFDSZ5X9OyqhB0X8R8DV9d/i4xpg/kNvcO7ojqgK",
+                            "8": null,
+                            "9": null,
+                            "10": "marto"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "regno",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "fname",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "sname",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "email",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "facultyid",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "schoolid",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "CourseID",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "password",
+                            "field": "7",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "profile_pic",
+                            "field": "8",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "cover_photo",
+                            "field": "9",
+                            "dataType": {
+                                "type": 23
+                            }
+                        },
+                        {
+                            "title": "username",
+                            "field": "10",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 1.744ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from students_tb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "346d8e56-1a55-4946-ed91-4072969a98b1"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 33
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0468fd2d-95b5-4f80-c1d8-4f88bf3debf3",
+                    "resultId": "346d8e56-1a55-4946-ed91-4072969a98b1",
+                    "rows": [
+                        {
+                            "0": "44086dc8-53c7-4764-98bc-a0b09cfc0e34",
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": null,
+                            "8": null,
+                            "9": "SCCI/00590/2020",
+                            "10": null,
+                            "11": null,
+                            "12": null,
+                            "13": null
+                        },
+                        {
+                            "0": "4d6acaf1-c1c7-44c2-a5cf-8f8562b4b29d",
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": null,
+                            "8": null,
+                            "9": "SCCI/00673/2020",
+                            "10": null,
+                            "11": null,
+                            "12": null,
+                            "13": null
+                        },
+                        {
+                            "0": "eb85b059-9cf2-4d60-a35e-89d7a9e5c9c4",
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": null,
+                            "8": null,
+                            "9": "SCCI/00674/2020",
+                            "10": null,
+                            "11": null,
+                            "12": null,
+                            "13": null
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "studentsDetID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "zip_code",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "email",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "phone",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "id_no",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "city",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "county",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "next_of_king",
+                            "field": "7",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "paswword",
+                            "field": "8",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "studentsRegno",
+                            "field": "9",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "portfolio_url",
+                            "field": "10",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "bio",
+                            "field": "11",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "social_handles",
+                            "field": "12",
+                            "dataType": {
+                                "type": 43
+                            }
+                        },
+                        {
+                            "title": "skills",
+                            "field": "13",
+                            "dataType": {
+                                "type": 43
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.933ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from studentsDetails_tb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1701): ClassicSession.run_sql: Cannot truncate a table referenced in a foreign key constraint (`satukdb`.`studentsports`, CONSTRAINT `studentsports_ibfk_1`)",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1e630566-adcd-4a7c-e9be-11f80c104b98"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 17
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0468fd2d-95b5-4f80-c1d8-4f88bf3debf3",
+                    "resultId": "1e630566-adcd-4a7c-e9be-11f80c104b98",
+                    "rows": [
+                        {
+                            "0": "regno",
+                            "1": "varchar(20)",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "fname",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "sname",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "email",
+                            "1": "varchar(50)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "facultyid",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "MUL",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "schoolid",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "MUL",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "CourseID",
+                            "1": "varchar(10)",
+                            "2": "YES",
+                            "3": "MUL",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "password",
+                            "1": "varchar(200)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "profile_pic",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "cover_photo",
+                            "1": "blob",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "username",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 11 records retrieved in 3.575ms"
+                    },
+                    "totalRowCount": 11,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "desc students_tb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "1f25b31e-199a-4932-95b0-d213ff577ed9",
+                            "content": "OK, 0 records retrieved in 31.556ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 64
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a48d4be3-d4b3-4324-aecf-67ebc067fe10"
+                    ]
+                },
+                "currentHeight": 292,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 237
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 237,
+                            "length": 1
+                        },
+                        "contentStart": 236,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0468fd2d-95b5-4f80-c1d8-4f88bf3debf3",
+                    "resultId": "a48d4be3-d4b3-4324-aecf-67ebc067fe10",
+                    "rows": [
+                        {
+                            "0": "cources_tb",
+                            "1": "FacultyID",
+                            "2": "cources_tb_ibfk_1",
+                            "3": "faculty_tb",
+                            "4": "FacultyID"
+                        },
+                        {
+                            "0": "cources_tb",
+                            "1": "SchoolID",
+                            "2": "cources_tb_ibfk_2",
+                            "3": "school_tb",
+                            "4": "SchoolID"
+                        },
+                        {
+                            "0": "cources_tb",
+                            "1": "DeptID",
+                            "2": "cources_tb_ibfk_3",
+                            "3": "dept_tb",
+                            "4": "DeptID"
+                        },
+                        {
+                            "0": "dept_tb",
+                            "1": "FacultyID",
+                            "2": "dept_tb_ibfk_1",
+                            "3": "faculty_tb",
+                            "4": "FacultyID"
+                        },
+                        {
+                            "0": "faculty_tb",
+                            "1": "studentid",
+                            "2": "faculty_tb_ibfk_1",
+                            "3": "students_tb",
+                            "4": "regno"
+                        },
+                        {
+                            "0": "messages_tb",
+                            "1": "CategoryID",
+                            "2": "messages_tb_ibfk_1",
+                            "3": "school_tb",
+                            "4": "SchoolID"
+                        },
+                        {
+                            "0": "messages_tb",
+                            "1": "CategoryID",
+                            "2": "messages_tb_ibfk_2",
+                            "3": "faculty_tb",
+                            "4": "FacultyID"
+                        },
+                        {
+                            "0": "messages_tb",
+                            "1": "CategoryID",
+                            "2": "messages_tb_ibfk_3",
+                            "3": "clubs_tb",
+                            "4": "ClubsID"
+                        },
+                        {
+                            "0": "messages_tb",
+                            "1": "CategoryID",
+                            "2": "messages_tb_ibfk_4",
+                            "3": "sports_tb",
+                            "4": "SportsID"
+                        },
+                        {
+                            "0": "notification_tb",
+                            "1": "CategoryID",
+                            "2": "notification_tb_ibfk_1",
+                            "3": "school_tb",
+                            "4": "SchoolID"
+                        },
+                        {
+                            "0": "notification_tb",
+                            "1": "CategoryID",
+                            "2": "notification_tb_ibfk_2",
+                            "3": "faculty_tb",
+                            "4": "FacultyID"
+                        },
+                        {
+                            "0": "notification_tb",
+                            "1": "CategoryID",
+                            "2": "notification_tb_ibfk_3",
+                            "3": "clubs_tb",
+                            "4": "ClubsID"
+                        },
+                        {
+                            "0": "notification_tb",
+                            "1": "CategoryID",
+                            "2": "notification_tb_ibfk_4",
+                            "3": "sports_tb",
+                            "4": "SportsID"
+                        },
+                        {
+                            "0": "posts_tb",
+                            "1": "StudentID",
+                            "2": "fk_postsID",
+                            "3": "students_tb",
+                            "4": "regno"
+                        },
+                        {
+                            "0": "posts_tb",
+                            "1": "StudentID",
+                            "2": "posts_tb_ibfk_1",
+                            "3": "students_tb",
+                            "4": "regno"
+                        },
+                        {
+                            "0": "school_tb",
+                            "1": "faculty_id",
+                            "2": "school_tb_ibfk_1",
+                            "3": "faculty_tb",
+                            "4": "FacultyID"
+                        },
+                        {
+                            "0": "studentclubs",
+                            "1": "StudentID",
+                            "2": "studentclubs_ibfk_1",
+                            "3": "students_tb",
+                            "4": "regno"
+                        },
+                        {
+                            "0": "studentclubs",
+                            "1": "ClubID",
+                            "2": "studentclubs_ibfk_2",
+                            "3": "clubs_tb",
+                            "4": "ClubsID"
+                        },
+                        {
+                            "0": "students_tb",
+                            "1": "facultyid",
+                            "2": "students_tb_ibfk_1",
+                            "3": "faculty_tb",
+                            "4": "FacultyID"
+                        },
+                        {
+                            "0": "students_tb",
+                            "1": "facultyid",
+                            "2": "students_tb_ibfk_2",
+                            "3": "faculty_tb",
+                            "4": "FacultyID"
+                        },
+                        {
+                            "0": "students_tb",
+                            "1": "facultyid",
+                            "2": "students_tb_ibfk_3",
+                            "3": "faculty_tb",
+                            "4": "FacultyID"
+                        },
+                        {
+                            "0": "students_tb",
+                            "1": "schoolid",
+                            "2": "students_tb_ibfk_4",
+                            "3": "school_tb",
+                            "4": "SchoolID"
+                        },
+                        {
+                            "0": "students_tb",
+                            "1": "CourseID",
+                            "2": "students_tb_ibfk_5",
+                            "3": "cources_tb",
+                            "4": "CourseID"
+                        },
+                        {
+                            "0": "studentsports",
+                            "1": "StudentID",
+                            "2": "studentsports_ibfk_1",
+                            "3": "students_tb",
+                            "4": "regno"
+                        },
+                        {
+                            "0": "studentsports",
+                            "1": "SportID",
+                            "2": "studentsports_ibfk_2",
+                            "3": "sports_tb",
+                            "4": "SportsID"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "TABLE_NAME",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "COLUMN_NAME",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "CONSTRAINT_NAME",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "REFERENCED_TABLE_NAME",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "REFERENCED_COLUMN_NAME",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 25 records retrieved in 7.513ms"
+                    },
+                    "totalRowCount": 25,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT\n    TABLE_NAME,\n    COLUMN_NAME,\n    CONSTRAINT_NAME,\n    REFERENCED_TABLE_NAME,\n    REFERENCED_COLUMN_NAME\nFROM\n    INFORMATION_SCHEMA.KEY_COLUMN_USAGE\nWHERE\n    TABLE_SCHEMA = 'satukdb'\n    AND REFERENCED_TABLE_NAME IS NOT NULL"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 24,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": []
+            },
+            "data": []
+        }
+    ]
+}

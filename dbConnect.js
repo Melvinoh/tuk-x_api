@@ -5,7 +5,8 @@ export const db = mysql.createConnection(
         host:"localhost",
         user:"root",
         password:"Muturi",
-        database:"satukdb"
+        database:"satukdb",
+        multipleStatements:true
     }
 );
 if (db) {
