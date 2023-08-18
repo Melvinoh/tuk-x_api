@@ -30,6 +30,7 @@ export const signUp = (req , res) =>{
             const values = [regno, fname, sname, email, hashedPassword, username];
 
             db.query(q, [values])
+            
             db.query(q1, [studentsDetID,regno])
             return res.status(200).json("account creation succefull")
         })
@@ -49,7 +50,7 @@ export const login  = (req, res) =>{
     if(!username || !password){
         return res.status(400).json('all field are required')
     }
-    const q = "SELECT * FROM `students_tb` WHERE `username` = ?"
+    const q = "select * from `students_tb` as st join `studentsDetails_tb` as sd on  st.regno = sd.studentsRegno where st.username = ?"
    
     db.query(q ,[username], (err, data) =>{
         if (err) return res.status(500).json(err);

@@ -12,7 +12,7 @@ export const profileUpdate = (req,res) =>{
 
         const regno = student.id;
         const {fname,sname,coverPic,profilePic,email,tel,zip,city,state,NOK,Id_no,password,username,portfolio,bio,social,skills} = req.body
-
+        console.log(profilePic)
 
         const q = [
             "UPDATE `studentsDetails_tb` SET `zip_code` = ?, `email` = ?,`phone` = ?,`id_no` = ?,`city` = ?,`county` = ?,`next_of_king` = ?,`portfolio_url` = ?,`bio` = ?  WHERE studentsRegno = ?",
@@ -43,8 +43,6 @@ export const profileUpdate = (req,res) =>{
 
 export const getProfile = (req,res) =>{
     const token = req.cookies.accessToken
-    console.log(token)
-
     if (!token) return res.status(401).json("user not logged in ")
 
     jwt.verify(token, "secretKey", (err,student) =>{
@@ -54,7 +52,8 @@ export const getProfile = (req,res) =>{
         db.query(q,[regno], (err,data)=>{
             if (err) return res.status(500).json(err)
             if (data.length === 0) return res.status(404).json("username not found");
-            return res.status(200).json(data[0])
+            const{password, ...others} = data[0];
+            return res.status(200).json(others)
         })
 
     })
