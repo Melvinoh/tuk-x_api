@@ -4,6 +4,7 @@ import clubRoutes from "./routers/clubs.js"
 import postsRoutes from "./routers/post.js"
 import uploadRoutes from "./routers/upload.js"
 import profileRouters from "./routers/profile.js"
+import CommentRoutes from "./routers/comments.js"
 import cors from "cors"
 import cookieParser from "cookie-parser";
 
@@ -27,6 +28,7 @@ app.use("/api/clubs", clubRoutes);
 app.use("/api/posts",postsRoutes );
 app.use("/api/uploadFile", uploadRoutes);
 app.use("/api/profile", profileRouters);
+app.use("/api/comments", CommentRoutes);
 
 
 
