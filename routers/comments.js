@@ -6,6 +6,6 @@ const router = Router();
 
 router.post("/addComment" , addComment);
 router.get("/getComment",getComments);
-router.delete("delete/comments" , deleteComments);
+router.delete("/delete/comments" , deleteComments);
 
 export default router

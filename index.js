@@ -7,6 +7,8 @@ import profileRouters from "./routers/profile.js"
 import CommentRoutes from "./routers/comments.js"
 import cors from "cors"
 import cookieParser from "cookie-parser";
+import likesrouter from "./routers/likes.js";
+
 
 const app = express();
 
@@ -29,6 +31,7 @@ app.use("/api/posts",postsRoutes );
 app.use("/api/uploadFile", uploadRoutes);
 app.use("/api/profile", profileRouters);
 app.use("/api/comments", CommentRoutes);
+app.use("/api/likes", likesrouter);
 
 
 
