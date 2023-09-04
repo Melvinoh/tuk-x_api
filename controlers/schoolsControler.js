@@ -79,6 +79,32 @@ export const getCourse = (req,res) =>{
         return res.status(200).json(data[0]);
     });
 }
+export const getLeaders = (req,res) =>{
+    const {cm ,cl} = req.query
+    if(!cm  || !cl) return res.status(400).json("all fields are required");
+    
+    console.log(cl)
+    const values = [cl,cm]
+    const q = "select s.regno ,s.fname, s.sname, s.profile_pic, l.position from students_tb as s join Leaders_tb AS l ON l.StudentRegno = s.regno WHERE regno IN (?) ";
+
+    db.query(q, [values], (err,data) =>{
+        if (err) return res.status(500).json(err)
+        return res.status(200).json(data);
+    })
+}
+export const getClassreps = (req,res) =>{
+    const {year_1,year_2,year_3,year_4} = req.body
+    if(!year_1) return res.status(400).json("all fields are required");
+    
+    console.log(year_4)
+    const values = [year_1,year_2,year_3,year_4]
+    const q = "select s.regno ,s.fname, s.sname, s.profile_pic from students_tb as s  WHERE s.regno IN (?) ";
+
+    db.query(q, [values], (err,data) =>{
+        if (err) return res.status(500).json(err)
+        return res.status(200).json(data);
+    })
+}
 
 
 export const deleteSchools = (req,res) =>{

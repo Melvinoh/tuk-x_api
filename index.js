@@ -9,6 +9,7 @@ import cors from "cors"
 import cookieParser from "cookie-parser";
 import likesrouter from "./routers/likes.js";
 import schoolsrouter from "./routers/schools.js";
+import Galleryrouter from "./routers/Gallery.js";
 
 
 const app = express();
@@ -34,6 +35,7 @@ app.use("/api/profile", profileRouters);
 app.use("/api/comments", CommentRoutes);
 app.use("/api/likes", likesrouter);
 app.use("/api/schools", schoolsrouter);
+app.use("/api/Gallery", Galleryrouter);
 
 
 app.listen("8800", ()=>{
